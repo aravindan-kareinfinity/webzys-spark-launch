@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, MessageSquare } from "lucide-react";
 
 const CallToAction = () => {
   return (
@@ -16,13 +16,26 @@ const CallToAction = () => {
                 Let's create something amazing together. Start your project now
                 and get a free consultation with our experts.
               </p>
-              <a
-                href="mailto:hello@webzys.com"
-                className="bg-white text-primary font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all duration-200 shadow-md inline-flex items-center gap-2 group"
-              >
-                Let's Build Your Website Now
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="mailto:webzyhelps@gmail.com"
+                  className="bg-white text-primary font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transition-all duration-200 shadow-md inline-flex items-center gap-2 group"
+                >
+                  <Mail className="h-4 w-4" />
+                  Email Us
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <a
+                  href="https://wa.me/918270612215"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 text-white font-semibold py-3 px-8 rounded-full hover:bg-green-600 transition-all duration-200 shadow-md inline-flex items-center gap-2 group"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  WhatsApp Us
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
             </div>
             <div className="w-full md:w-1/3 bg-white/10 backdrop-blur-sm h-full p-10 md:p-16 flex items-center justify-center">
               <div className="text-center">
