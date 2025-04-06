@@ -18,15 +18,477 @@
     <meta name="twitter:site" content="@webzys" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts - Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <!-- Hidden header for SEO -->
+    <div class="visually-hidden">
+      <h1>Webzys - Professional Static Website Design Company in India</h1>
+      <p>Affordable websites for small businesses and startups. Fast loading, custom static websites at budget-friendly prices under 5000.</p>
+    </div>
+
+    <!-- Navbar Section -->
+    <header class="fixed-top transition-all" id="navbar">
+      <div class="container d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center">
+          <a href="/" class="fs-4 fw-bold gradient-text text-decoration-none">Webzys</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="d-none d-md-flex">
+          <ul class="list-unstyled d-flex gap-4 mb-0">
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#why-us" class="nav-link">Why Us</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          </ul>
+        </nav>
+
+        <div class="d-none d-md-block">
+          <a href="#contact" class="btn btn-primary rounded-pill px-4 py-2">Get Started</a>
+        </div>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="d-md-none btn btn-link text-dark" id="mobile-menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="d-md-none bg-white shadow-lg position-absolute w-100 p-4 d-none animate-fade-in">
+        <nav class="d-flex flex-column gap-3">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#why-us" class="nav-link">Why Us</a>
+          <a href="#portfolio" class="nav-link">Portfolio</a>
+          <a href="#testimonials" class="nav-link">Testimonials</a>
+          <a href="#contact" class="btn btn-primary text-center rounded-pill px-4 py-2">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-5 mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-5 mb-md-0">
+            <h1 class="display-4 fw-bold mb-4">
+              We Build <span class="gradient-text">Beautiful</span> Static Websites
+            </h1>
+            <p class="fs-5 text-secondary mb-4">
+              Launch your online presence with style, speed, and impact.
+            </p>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <a href="#contact" class="btn btn-primary rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2">
+                Start Your Project
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a href="#portfolio" class="btn btn-secondary rounded-pill px-4 py-3">
+                View Our Work
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 position-relative">
+            <div class="position-relative rounded-4 overflow-hidden shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+                alt="Web Design Process"
+                class="img-fluid"
+              />
+              <div class="overlay-effect"></div>
+            </div>
+            <div class="blob-1"></div>
+            <div class="blob-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 my-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fs-1 fw-bold mb-3">Our Services</h2>
+          <p class="text-secondary mx-auto" style="max-width: 700px;">
+            We provide comprehensive web design solutions tailored to your specific needs.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Service 1 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="bg-white p-4 rounded-4 shadow-sm h-100 service-card">
+              <div class="service-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              </div>
+              <h3 class="fs-5 fw-semibold mb-3">Static Website Design</h3>
+              <p class="text-secondary">Beautiful, fast-loading websites built with modern technologies for optimal performance.</p>
+            </div>
+          </div>
+          
+          <!-- Service 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="bg-white p-4 rounded-4 shadow-sm h-100 service-card">
+              <div class="service-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M20.4 14.5L16 10 4 20"></path></svg>
+              </div>
+              <h3 class="fs-5 fw-semibold mb-3">Portfolio Sites</h3>
+              <p class="text-secondary">Showcase your work with elegance. Perfect for artists, photographers, and professionals.</p>
+            </div>
+          </div>
+          
+          <!-- Service 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="bg-white p-4 rounded-4 shadow-sm h-100 service-card">
+              <div class="service-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              </div>
+              <h3 class="fs-5 fw-semibold mb-3">Branding & Logo Design</h3>
+              <p class="text-secondary">Create a consistent brand identity with professional logos and branding materials.</p>
+            </div>
+          </div>
+          
+          <!-- Service 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="bg-white p-4 rounded-4 shadow-sm h-100 service-card">
+              <div class="service-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C63FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </div>
+              <h3 class="fs-5 fw-semibold mb-3">Basic SEO</h3>
+              <p class="text-secondary">Optimize your website for search engines to increase visibility and attract more visitors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-5 my-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fs-1 fw-bold mb-3">Why Choose Us</h2>
+          <p class="text-secondary mx-auto" style="max-width: 700px;">
+            We stand out from the competition with these key advantages
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Reason 1 -->
+          <div class="col-md-6">
+            <div class="d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm overflow-hidden reason-card">
+              <div class="bg-primary p-4 d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="p-4 flex-grow-1">
+                <h3 class="fs-5 fw-semibold mb-2">Fast Delivery</h3>
+                <p class="text-secondary mb-0">Get your website up and running in record time with our streamlined process.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Reason 2 -->
+          <div class="col-md-6">
+            <div class="d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm overflow-hidden reason-card">
+              <div class="bg-secondary p-4 d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div class="p-4 flex-grow-1">
+                <h3 class="fs-5 fw-semibold mb-2">Affordable Pricing</h3>
+                <p class="text-secondary mb-0">Premium quality websites at budget-friendly prices that won't break the bank.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Reason 3 -->
+          <div class="col-md-6">
+            <div class="d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm overflow-hidden reason-card">
+              <div class="bg-primary p-4 d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <div class="p-4 flex-grow-1">
+                <h3 class="fs-5 fw-semibold mb-2">Fully Responsive</h3>
+                <p class="text-secondary mb-0">Websites that look stunning on all devices, from smartphones to desktops.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Reason 4 -->
+          <div class="col-md-6">
+            <div class="d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm overflow-hidden reason-card">
+              <div class="bg-secondary p-4 d-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div class="p-4 flex-grow-1">
+                <h3 class="fs-5 fw-semibold mb-2">Friendly Support</h3>
+                <p class="text-secondary mb-0">We're here to help with quick responses and solutions to your questions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 my-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fs-1 fw-bold mb-3">Our Portfolio</h2>
+          <p class="text-secondary mx-auto" style="max-width: 700px;">
+            Check out some of our recent work for our amazing clients
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Portfolio Item 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-card position-relative rounded-4 overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" alt="Bloom Café" class="img-fluid w-100 h-100 object-cover">
+              <div class="portfolio-overlay d-flex flex-column justify-content-between">
+                <a href="#" class="portfolio-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+                </a>
+                <div class="p-4">
+                  <h3 class="text-white fs-5 fw-semibold mb-1">Bloom Café</h3>
+                  <p class="text-white-50 small">Restaurant Website</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-card position-relative rounded-4 overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Venture Capital" class="img-fluid w-100 h-100 object-cover">
+              <div class="portfolio-overlay d-flex flex-column justify-content-between">
+                <a href="#" class="portfolio-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+                </a>
+                <div class="p-4">
+                  <h3 class="text-white fs-5 fw-semibold mb-1">Venture Capital</h3>
+                  <p class="text-white-50 small">Business Website</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Portfolio Item 3 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="portfolio-card position-relative rounded-4 overflow-hidden shadow-lg">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Arctic Travels" class="img-fluid w-100 h-100 object-cover">
+              <div class="portfolio-overlay d-flex flex-column justify-content-between">
+                <a href="#" class="portfolio-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+                </a>
+                <div class="p-4">
+                  <h3 class="text-white fs-5 fw-semibold mb-1">Arctic Travels</h3>
+                  <p class="text-white-50 small">Tourism Website</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="#contact" class="btn btn-primary rounded-pill px-4 py-2">
+            View All Projects
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5 my-5 testimonials-section text-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="fs-1 fw-bold mb-3">What Our Clients Say</h2>
+          <p class="mx-auto" style="max-width: 700px; opacity: 0.9;">
+            Don't just take our word for it. Here's what our clients have to say about our work.
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                  <div class="testimonial-card text-center">
+                    <div class="quote-icon mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M3 21c3.73-2.5 5-5.57 5-10V3h6v18-10c0 4.42 1.27 7.5 5 10"></path></svg>
+                    </div>
+                    <p class="fs-5 mb-4">Webzys transformed our online presence with a beautiful website that perfectly captures our brand. Sales have increased by 40% since launch!</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                      <img src="https://i.pravatar.cc/150?img=32" alt="Sarah Johnson" class="rounded-circle me-3" width="56" height="56">
+                      <div class="text-start">
+                        <h4 class="fs-6 fw-semibold mb-0">Sarah Johnson</h4>
+                        <p class="small opacity-75 mb-0">Boutique Owner</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                  <div class="testimonial-card text-center">
+                    <div class="quote-icon mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M3 21c3.73-2.5 5-5.57 5-10V3h6v18-10c0 4.42 1.27 7.5 5 10"></path></svg>
+                    </div>
+                    <p class="fs-5 mb-4">Fast, efficient, and incredibly talented. Webzys delivered our website ahead of schedule, and the results exceeded all expectations.</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                      <img src="https://i.pravatar.cc/150?img=11" alt="Michael Chen" class="rounded-circle me-3" width="56" height="56">
+                      <div class="text-start">
+                        <h4 class="fs-6 fw-semibold mb-0">Michael Chen</h4>
+                        <p class="small opacity-75 mb-0">Startup Founder</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                  <div class="testimonial-card text-center">
+                    <div class="quote-icon mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M3 21c3.73-2.5 5-5.57 5-10V3h6v18-10c0 4.42 1.27 7.5 5 10"></path></svg>
+                    </div>
+                    <p class="fs-5 mb-4">As a creative professional, I needed a portfolio that would showcase my work while being easy to update. Webzys nailed it on the first try!</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                      <img src="https://i.pravatar.cc/150?img=26" alt="Emily Rodriguez" class="rounded-circle me-3" width="56" height="56">
+                      <div class="text-start">
+                        <h4 class="fs-6 fw-semibold mb-0">Emily Rodriguez</h4>
+                        <p class="small opacity-75 mb-0">Photographer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators position-relative mt-4">
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
+                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="py-5 my-5">
+      <div class="container">
+        <div class="cta-card overflow-hidden shadow-xl rounded-4">
+          <div class="row g-0">
+            <div class="col-md-8 p-5">
+              <h2 class="fs-1 fw-bold mb-3 text-white">Ready to Build Your Dream Website?</h2>
+              <p class="text-white-90 mb-4">Let's create something amazing together. Start your project now and get a free consultation with our experts.</p>
+              <div class="d-flex flex-column flex-sm-row gap-3">
+                <a href="mailto:webzyhelps@gmail.com" class="btn btn-light rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  Email Us
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+                <a href="https://wa.me/918270612215" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                  WhatsApp Us
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4 bg-white-10 d-flex align-items-center justify-content-center p-5">
+              <div class="text-center">
+                <div class="start-now-circle mx-auto mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
+                <p class="text-white fw-medium">Start Now</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container py-4">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <h3 class="gradient-text fs-4 fw-bold mb-4">Webzys</h3>
+            <p class="text-secondary mb-4">
+              We build beautiful static websites for small businesses, startups, and individuals. 
+              Affordable website design services in India with SEO optimization.
+            </p>
+            <div class="d-flex gap-3">
+              <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </a>
+              <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              </a>
+              <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              </a>
+              <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-md-4 col-lg-4">
+            <h4 class="fs-6 fw-semibold mb-4">Quick Links</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#services" class="footer-link">Professional Web Design Services</a>
+              </li>
+              <li class="mb-2">
+                <a href="#why-us" class="footer-link">Why Choose Our Website Builders</a>
+              </li>
+              <li class="mb-2">
+                <a href="#portfolio" class="footer-link">Custom Static Website Portfolio</a>
+              </li>
+              <li class="mb-2">
+                <a href="#testimonials" class="footer-link">Client Testimonials</a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="col-md-4 col-lg-4">
+            <h4 class="fs-6 fw-semibold mb-4">Contact Us</h4>
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="mailto:webzyhelps@gmail.com" class="footer-link d-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  webzyhelps@gmail.com
+                </a>
+              </li>
+              <li class="mb-2">
+                <a href="https://wa.me/918270612215" target="_blank" rel="noopener noreferrer" class="footer-link d-flex align-items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                  WhatsApp: +91 8270612215
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-top border-secondary mt-5 pt-4 text-center text-secondary">
+          <p>&copy; <span id="current-year"></span> Webzys. All rights reserved. | Affordable website design for small businesses in India | Business website under 5000</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Required Bootstrap JavaScript and Custom JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <script src="script.js"></script>
   </body>
 </html>
