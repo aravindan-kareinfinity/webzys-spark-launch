@@ -13,109 +13,56 @@
     <meta property="og:description" content="Professional web design service for startups and small businesses in India. Custom static websites, fast loading, responsive design, all at affordable prices under 5000." />
     <meta property="og:type" content="website" />
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              primary: '#6C63FF',
+              'primary-hover': '#5B52E5',
+              secondary: '#FF6F61',
+              'secondary-hover': '#FF5B4C',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'bounce-subtle': 'bounceSubtle 2s infinite ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              bounceSubtle: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-5px)' },
+              },
+            }
+          }
+        }
+      }
+    </script>
+    
     <style>
-      :root {
-        --primary: #6C63FF;
-        --primary-hover: #5a52e0;
-        --secondary: #FF6C63;
-        --secondary-hover: #e05a52;
-        --dark: #212529;
-        --light: #ffffff;
-      }
-      
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
       body {
         font-family: 'Montserrat', sans-serif;
-        color: var(--dark);
         overflow-x: hidden;
       }
       
-      /* Navbar Styles */
-      #navbar {
-        transition: all 0.3s ease;
-        background-color: rgba(255, 255, 255, 0.95);
-      }
-      
-      #navbar.scrolled {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        background-color: rgba(255, 255, 255, 0.98);
-      }
-      
       .gradient-text {
-        background-image: linear-gradient(to right, var(--primary), var(--secondary));
+        background-image: linear-gradient(to right, #6C63FF, #FF6F61);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-      }
-      
-      .nav-link {
-        color: var(--dark);
-        font-weight: 500;
-        padding: 0.5rem 0;
-        transition: color 0.3s;
-        text-decoration: none;
-      }
-      
-      .nav-link:hover {
-        color: var(--primary);
-      }
-      
-      /* Hero Section */
-      .hero-section {
-        padding-top: 8rem;
-        padding-bottom: 5rem;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .hero-section h1 {
-        font-weight: 800;
-        line-height: 1.2;
-      }
-      
-      .btn-primary {
-        background-color: var(--primary);
-        border-color: var(--primary);
-        border-radius: 50px;
-        padding: 0.75rem 2rem;
-        font-weight: 600;
-        transition: all 0.3s;
-      }
-      
-      .btn-primary:hover {
-        background-color: var(--primary-hover);
-        border-color: var(--primary-hover);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(90, 82, 224, 0.2);
-      }
-      
-      .btn-secondary {
-        background-color: var(--secondary);
-        border-color: var(--secondary);
-        border-radius: 50px;
-        padding: 0.75rem 2rem;
-        font-weight: 600;
-        transition: all 0.3s;
-      }
-      
-      .btn-secondary:hover {
-        background-color: var(--secondary-hover);
-        border-color: var(--secondary-hover);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(224, 90, 82, 0.2);
       }
       
       .overlay-effect {
@@ -152,197 +99,17 @@
         left: -70px;
       }
       
-      /* Services Section */
-      .service-card {
-        transition: all 0.3s;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+      .testimonials-gradient {
+        background-image: linear-gradient(to right, #6C63FF, #FF6F61);
       }
       
-      .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-      }
-      
-      .service-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        background-color: rgba(108, 99, 255, 0.1);
-        border-radius: 50%;
-      }
-      
-      /* Why Choose Us Section */
-      .reason-card {
-        transition: all 0.3s;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-      }
-      
-      .reason-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-      }
-      
-      /* Portfolio Section */
-      .portfolio-card {
-        height: 280px;
-        transition: all 0.3s;
-      }
-      
-      .portfolio-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-      }
-      
-      .portfolio-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
-        opacity: 0;
-        transition: all 0.3s;
-      }
-      
-      .portfolio-card:hover .portfolio-overlay {
-        opacity: 1;
-      }
-      
-      .portfolio-link {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        background-color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary);
-        text-decoration: none;
-        transform: scale(0);
-        transition: all 0.3s;
-      }
-      
-      .portfolio-card:hover .portfolio-link {
-        transform: scale(1);
-      }
-      
-      /* Testimonials Section */
-      .testimonials-section {
-        background-image: linear-gradient(to right, var(--primary), var(--secondary));
-        padding: 6rem 0;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .testimonial-card {
-        padding: 2rem;
-        border-radius: 8px;
-      }
-      
-      .carousel-indicators [data-bs-target] {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.6);
-        border: none;
-      }
-      
-      .carousel-indicators .active {
-        background-color: white;
-      }
-      
-      /* CTA Section */
-      .cta-card {
-        background-image: linear-gradient(to right, var(--primary), var(--secondary));
-        border-radius: 16px;
-      }
-      
-      .bg-white-10 {
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-      
-      .start-now-circle {
-        width: 80px;
-        height: 80px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      /* Footer */
-      .social-icon {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 36px;
-        height: 36px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: rgba(255, 255, 255, 0.7);
-        transition: all 0.3s;
-        text-decoration: none;
-      }
-      
-      .social-icon:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-        color: white;
-        transform: translateY(-3px);
-      }
-      
-      .footer-link {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        transition: color 0.3s;
-        display: inline-block;
-        margin-bottom: 0.5rem;
-      }
-      
-      .footer-link:hover {
-        color: white;
-      }
-      
-      /* Mobile Menu */
-      .animate-fade-in {
-        animation: fadeIn 0.3s ease-in-out;
-      }
-      
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .d-none {
-        display: none;
-      }
-      
-      .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+      .cta-gradient {
+        background-image: linear-gradient(to right, #6C63FF, #FF6F61);
       }
     </style>
   </head>
 
-  <body>
+  <body class="bg-white text-gray-900">
     <!-- Hidden header for SEO -->
     <div class="sr-only">
       <h1>Webzys - Professional Static Website Design Company in India</h1>
@@ -350,71 +117,71 @@
     </div>
 
     <!-- Navbar Section -->
-    <header class="fixed-top transition-all" id="navbar">
-      <div class="container d-flex justify-content-between align-items-center py-3">
-        <div class="d-flex align-items-center">
-          <a href="/" class="fs-4 fw-bold gradient-text text-decoration-none">Webzys</a>
+    <header id="navbar" class="fixed top-0 left-0 w-full transition-all duration-300 bg-white/95 z-50">
+      <div class="container mx-auto flex justify-between items-center py-3 px-4 md:px-6">
+        <div class="flex items-center">
+          <a href="/" class="text-2xl font-bold gradient-text no-underline">Webzys</a>
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="d-none d-md-flex">
-          <ul class="list-unstyled d-flex gap-4 mb-0">
-            <li><a href="#services" class="nav-link">Services</a></li>
-            <li><a href="#why-us" class="nav-link">Why Us</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-            <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <nav class="hidden md:flex">
+          <ul class="flex space-x-6">
+            <li><a href="#services" class="text-gray-900 font-medium py-2 hover:text-primary transition-colors">Services</a></li>
+            <li><a href="#why-us" class="text-gray-900 font-medium py-2 hover:text-primary transition-colors">Why Us</a></li>
+            <li><a href="#portfolio" class="text-gray-900 font-medium py-2 hover:text-primary transition-colors">Portfolio</a></li>
+            <li><a href="#testimonials" class="text-gray-900 font-medium py-2 hover:text-primary transition-colors">Testimonials</a></li>
           </ul>
         </nav>
 
-        <div class="d-none d-md-block">
-          <a href="#contact" class="btn btn-primary rounded-pill px-4 py-2">Get Started</a>
+        <div class="hidden md:block">
+          <a href="#contact" class="bg-primary text-white rounded-full px-4 py-2 font-semibold hover:bg-primary-hover transition-all">Get Started</a>
         </div>
 
         <!-- Mobile Navigation Toggle -->
-        <button class="d-md-none btn btn-link text-dark" id="mobile-menu-toggle">
+        <button class="md:hidden" id="mobile-menu-toggle">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="d-md-none bg-white shadow-lg position-absolute w-100 p-4 d-none animate-fade-in">
-        <nav class="d-flex flex-column gap-3">
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#why-us" class="nav-link">Why Us</a>
-          <a href="#portfolio" class="nav-link">Portfolio</a>
-          <a href="#testimonials" class="nav-link">Testimonials</a>
-          <a href="#contact" class="btn btn-primary text-center rounded-pill px-4 py-2">Get Started</a>
+      <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full p-4 hidden animate-fade-in">
+        <nav class="flex flex-col space-y-3">
+          <a href="#services" class="text-gray-900 font-medium hover:text-primary transition-colors">Services</a>
+          <a href="#why-us" class="text-gray-900 font-medium hover:text-primary transition-colors">Why Us</a>
+          <a href="#portfolio" class="text-gray-900 font-medium hover:text-primary transition-colors">Portfolio</a>
+          <a href="#testimonials" class="text-gray-900 font-medium hover:text-primary transition-colors">Testimonials</a>
+          <a href="#contact" class="bg-primary text-white text-center rounded-full px-4 py-2 font-semibold">Get Started</a>
         </nav>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section pt-5 mt-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-5 mb-md-0">
-            <h1 class="display-4 fw-bold mb-4">
+    <section class="pt-28 pb-20 relative">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0">
+            <h1 class="text-4xl lg:text-5xl font-extrabold mb-6">
               We Build <span class="gradient-text">Beautiful</span> Static Websites
             </h1>
-            <p class="fs-5 text-secondary mb-4">
+            <p class="text-xl text-gray-600 mb-6">
               Launch your online presence with style, speed, and impact.
             </p>
-            <div class="d-flex flex-column flex-sm-row gap-3">
-              <a href="#contact" class="btn btn-primary rounded-pill px-4 py-3 d-inline-flex align-items-center gap-2">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="#contact" class="bg-primary hover:bg-primary-hover text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2 transition-all transform hover:-translate-y-1 hover:shadow-lg">
                 Start Your Project
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
-              <a href="#portfolio" class="btn btn-secondary rounded-pill px-4 py-3">
+              <a href="#portfolio" class="bg-secondary hover:bg-secondary-hover text-white rounded-full px-6 py-3 font-semibold transition-all transform hover:-translate-y-1 hover:shadow-lg">
                 View Our Work
               </a>
             </div>
           </div>
-          <div class="col-md-6 position-relative">
-            <div class="position-relative rounded-4 overflow-hidden shadow-lg">
+          <div class="md:w-1/2 relative">
+            <div class="relative rounded-xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
                 alt="Web Design Process"
-                class="img-fluid"
+                class="w-full"
               />
               <div class="overlay-effect"></div>
             </div>
@@ -426,53 +193,53 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-5 my-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fs-1 fw-bold mb-3">Our Services</h2>
-          <p class="text-secondary mx-auto" style="max-width: 700px;">
+    <section id="services" class="py-20">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>
+          <p class="text-gray-600 mx-auto max-w-2xl">
             We provide comprehensive web design solutions tailored to your specific needs.
           </p>
         </div>
 
-        <div class="row g-4" id="services-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="services-container">
           <!-- Services will be loaded dynamically from JSON -->
         </div>
       </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="py-5 my-5 bg-light">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fs-1 fw-bold mb-3">Why Choose Us</h2>
-          <p class="text-secondary mx-auto" style="max-width: 700px;">
+    <section id="why-us" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">Why Choose Us</h2>
+          <p class="text-gray-600 mx-auto max-w-2xl">
             We stand out from the competition with these key advantages
           </p>
         </div>
 
-        <div class="row g-4" id="reasons-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="reasons-container">
           <!-- Reasons will be loaded dynamically from JSON -->
         </div>
       </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5 my-5">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fs-1 fw-bold mb-3">Our Portfolio</h2>
-          <p class="text-secondary mx-auto" style="max-width: 700px;">
+    <section id="portfolio" class="py-20">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Portfolio</h2>
+          <p class="text-gray-600 mx-auto max-w-2xl">
             Check out some of our recent work for our amazing clients
           </p>
         </div>
 
-        <div class="row g-4" id="portfolio-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-container">
           <!-- Portfolio items will be loaded dynamically from JSON -->
         </div>
         
-        <div class="text-center mt-5">
-          <a href="#contact" class="btn btn-primary rounded-pill px-4 py-2">
+        <div class="text-center mt-12">
+          <a href="#contact" class="bg-primary hover:bg-primary-hover text-white rounded-full px-6 py-3 font-semibold transition-all transform hover:-translate-y-1 hover:shadow-lg">
             View All Projects
           </a>
         </div>
@@ -480,26 +247,33 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5 my-5 testimonials-section text-white">
-      <div class="container">
-        <div class="text-center mb-5">
-          <h2 class="fs-1 fw-bold mb-3">What Our Clients Say</h2>
-          <p class="mx-auto" style="max-width: 700px; opacity: 0.9;">
+    <section id="testimonials" class="py-20 testimonials-gradient text-white">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <p class="mx-auto max-w-2xl opacity-90">
             Don't just take our word for it. Here's what our clients have to say about our work.
           </p>
         </div>
 
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="flex justify-center">
+          <div class="w-full lg:w-2/3">
+            <div id="testimonialCarousel" class="relative">
               <div class="carousel-inner" id="testimonials-container">
                 <!-- Testimonials will be loaded dynamically from JSON -->
               </div>
               
-              <!-- Carousel Indicators -->
-              <div class="carousel-indicators position-relative mt-4" id="testimonial-indicators">
+              <div class="flex justify-center mt-8 space-x-2" id="testimonial-indicators">
                 <!-- Indicators will be loaded dynamically -->
               </div>
+              
+              <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 ml-2 focus:outline-none" id="prev-testimonial">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+              
+              <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 mr-2 focus:outline-none" id="next-testimonial">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
             </div>
           </div>
         </div>
@@ -507,32 +281,32 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section id="contact" class="py-5 my-5">
-      <div class="container">
-        <div class="cta-card overflow-hidden shadow-xl rounded-4">
-          <div class="row g-0">
-            <div class="col-md-8 p-5">
-              <h2 class="fs-1 fw-bold mb-3 text-white">Ready to Build Your Dream Website?</h2>
-              <p class="text-white-90 mb-4">Let's create something amazing together. Start your project now and get a free consultation with our experts.</p>
-              <div class="d-flex flex-column flex-sm-row gap-3">
-                <a href="mailto:webzyhelps@gmail.com" class="btn btn-light rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2">
+    <section id="contact" class="py-20">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="cta-gradient rounded-2xl overflow-hidden shadow-2xl">
+          <div class="flex flex-col md:flex-row">
+            <div class="md:w-2/3 p-8 md:p-12">
+              <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Ready to Build Your Dream Website?</h2>
+              <p class="text-white/90 mb-6">Let's create something amazing together. Start your project now and get a free consultation with our experts.</p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <a href="mailto:webzyhelps@gmail.com" class="bg-white hover:bg-gray-100 text-gray-800 rounded-full px-6 py-3 font-semibold flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                   Email Us
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
-                <a href="https://wa.me/918270612215" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-4 py-2 d-inline-flex align-items-center gap-2">
+                <a href="https://wa.me/918270612215" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white rounded-full px-6 py-3 font-semibold flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                   WhatsApp Us
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </a>
               </div>
             </div>
-            <div class="col-md-4 bg-white-10 d-flex align-items-center justify-content-center p-5">
+            <div class="md:w-1/3 bg-white/10 flex items-center justify-center p-8 md:p-12">
               <div class="text-center">
-                <div class="start-now-circle mx-auto mb-3">
+                <div class="w-20 h-20 bg-white/20 rounded-full mx-auto mb-3 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                 </div>
-                <p class="text-white fw-medium">Start Now</p>
+                <p class="text-white font-medium">Start Now</p>
               </div>
             </div>
           </div>
@@ -541,60 +315,60 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-      <div class="container py-4">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <h3 class="gradient-text fs-4 fw-bold mb-4">Webzys</h3>
-            <p class="text-secondary mb-4">
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4 md:px-6 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="gradient-text text-2xl font-bold mb-6">Webzys</h3>
+            <p class="text-gray-400 mb-6">
               We build beautiful static websites for small businesses, startups, and individuals. 
               Affordable website design services in India with SEO optimization.
             </p>
-            <div class="d-flex gap-3">
-              <a href="https://instagram.com" class="social-icon" aria-label="Instagram">
+            <div class="flex space-x-4">
+              <a href="https://instagram.com" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:-translate-y-1" aria-label="Instagram">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
               </a>
-              <a href="https://facebook.com" class="social-icon" aria-label="Facebook">
+              <a href="https://facebook.com" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:-translate-y-1" aria-label="Facebook">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
               </a>
-              <a href="https://twitter.com" class="social-icon" aria-label="Twitter">
+              <a href="https://twitter.com" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:-translate-y-1" aria-label="Twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
               </a>
-              <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn">
+              <a href="https://linkedin.com" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:-translate-y-1" aria-label="LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
             </div>
           </div>
           
-          <div class="col-md-4 col-lg-4">
-            <h4 class="fs-6 fw-semibold mb-4">Quick Links</h4>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a href="#services" class="footer-link">Professional Web Design Services</a>
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul>
+              <li class="mb-3">
+                <a href="#services" class="text-gray-400 hover:text-white transition-colors">Professional Web Design Services</a>
               </li>
-              <li class="mb-2">
-                <a href="#why-us" class="footer-link">Why Choose Our Website Builders</a>
+              <li class="mb-3">
+                <a href="#why-us" class="text-gray-400 hover:text-white transition-colors">Why Choose Our Website Builders</a>
               </li>
-              <li class="mb-2">
-                <a href="#portfolio" class="footer-link">Custom Static Website Portfolio</a>
+              <li class="mb-3">
+                <a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Custom Static Website Portfolio</a>
               </li>
-              <li class="mb-2">
-                <a href="#testimonials" class="footer-link">Client Testimonials</a>
+              <li class="mb-3">
+                <a href="#testimonials" class="text-gray-400 hover:text-white transition-colors">Client Testimonials</a>
               </li>
             </ul>
           </div>
           
-          <div class="col-md-4 col-lg-4">
-            <h4 class="fs-6 fw-semibold mb-4">Contact Us</h4>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <a href="mailto:webzyhelps@gmail.com" class="footer-link d-flex align-items-center gap-2">
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Contact Us</h4>
+            <ul>
+              <li class="mb-3">
+                <a href="mailto:webzyhelps@gmail.com" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                   webzyhelps@gmail.com
                 </a>
               </li>
-              <li class="mb-2">
-                <a href="https://wa.me/918270612215" target="_blank" rel="noopener noreferrer" class="footer-link d-flex align-items-center gap-2">
+              <li class="mb-3">
+                <a href="https://wa.me/918270612215" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
                   WhatsApp: +91 8270612215
                 </a>
@@ -603,14 +377,12 @@
           </div>
         </div>
         
-        <div class="border-top border-secondary mt-5 pt-4 text-center text-secondary">
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
           <p>&copy; <span id="current-year"></span> Webzys. All rights reserved. | Affordable website design for small businesses in India | Business website under 5000</p>
         </div>
       </div>
     </footer>
 
-    <!-- Required Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         // Load JSON data
@@ -621,14 +393,12 @@
             const servicesContainer = document.getElementById('services-container');
             data.services.forEach(service => {
               const serviceHTML = `
-                <div class="col-md-6 col-lg-3">
-                  <div class="bg-white p-4 rounded-4 shadow-sm h-100 service-card">
-                    <div class="service-icon mb-4">
-                      ${service.icon}
-                    </div>
-                    <h3 class="fs-5 fw-semibold mb-3">${service.title}</h3>
-                    <p class="text-secondary">${service.description}</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                  <div class="w-14 h-14 bg-primary/10 rounded-full mb-6 flex items-center justify-center">
+                    ${service.icon}
                   </div>
+                  <h3 class="text-xl font-semibold mb-3">${service.title}</h3>
+                  <p class="text-gray-600">${service.description}</p>
                 </div>
               `;
               servicesContainer.innerHTML += serviceHTML;
@@ -637,16 +407,15 @@
             // Populate reasons
             const reasonsContainer = document.getElementById('reasons-container');
             data.reasons.forEach(reason => {
+              const bgColor = reason.bgColor === 'primary' ? 'bg-primary' : 'bg-secondary';
               const reasonHTML = `
-                <div class="col-md-6">
-                  <div class="d-flex flex-column flex-md-row bg-white rounded-4 shadow-sm overflow-hidden reason-card">
-                    <div class="bg-${reason.bgColor} p-4 d-flex align-items-center justify-content-center">
-                      ${reason.icon}
-                    </div>
-                    <div class="p-4 flex-grow-1">
-                      <h3 class="fs-5 fw-semibold mb-2">${reason.title}</h3>
-                      <p class="text-secondary mb-0">${reason.description}</p>
-                    </div>
+                <div class="flex flex-col md:flex-row bg-white rounded-xl shadow-lg overflow-hidden transition-all transform hover:-translate-y-2 hover:shadow-xl">
+                  <div class="${bgColor} p-6 flex items-center justify-center">
+                    ${reason.icon}
+                  </div>
+                  <div class="p-6 flex-grow">
+                    <h3 class="text-xl font-semibold mb-2">${reason.title}</h3>
+                    <p class="text-gray-600">${reason.description}</p>
                   </div>
                 </div>
               `;
@@ -657,17 +426,15 @@
             const portfolioContainer = document.getElementById('portfolio-container');
             data.portfolio.forEach(item => {
               const portfolioHTML = `
-                <div class="col-md-6 col-lg-4">
-                  <div class="portfolio-card position-relative rounded-4 overflow-hidden shadow-lg">
-                    <img src="${item.image}" alt="${item.title}" class="img-fluid w-100 h-100 object-cover">
-                    <div class="portfolio-overlay d-flex flex-column justify-content-between">
-                      <a href="#" class="portfolio-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
-                      </a>
-                      <div class="p-4">
-                        <h3 class="text-white fs-5 fw-semibold mb-1">${item.title}</h3>
-                        <p class="text-white-50 small">${item.category}</p>
-                      </div>
+                <div class="group relative h-72 rounded-xl overflow-hidden shadow-lg">
+                  <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover">
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end">
+                    <a href="#" class="absolute top-5 right-5 w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary transform scale-0 group-hover:scale-100 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"></path></svg>
+                    </a>
+                    <div class="p-6">
+                      <h3 class="text-white text-xl font-semibold mb-1">${item.title}</h3>
+                      <p class="text-gray-300 text-sm">${item.category}</p>
                     </div>
                   </div>
                 </div>
@@ -680,19 +447,19 @@
             const testimonialIndicators = document.getElementById('testimonial-indicators');
             
             data.testimonials.forEach((testimonial, index) => {
-              const activeClass = index === 0 ? 'active' : '';
+              const activeClass = index === 0 ? '' : 'hidden';
               const testimonialHTML = `
-                <div class="carousel-item ${activeClass}">
-                  <div class="testimonial-card text-center">
-                    <div class="quote-icon mb-4">
+                <div class="testimonial-item ${activeClass}" data-index="${index}">
+                  <div class="bg-white/10 p-8 rounded-xl backdrop-blur-sm">
+                    <div class="mb-6 flex justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="opacity-50"><path d="M3 21c3.73-2.5 5-5.57 5-10V3h6v18-10c0 4.42 1.27 7.5 5 10"></path></svg>
                     </div>
-                    <p class="fs-5 mb-4">${testimonial.text}</p>
-                    <div class="d-flex align-items-center justify-content-center">
-                      <img src="${testimonial.image}" alt="${testimonial.name}" class="rounded-circle me-3" width="56" height="56">
-                      <div class="text-start">
-                        <h4 class="fs-6 fw-semibold mb-0">${testimonial.name}</h4>
-                        <p class="small opacity-75 mb-0">${testimonial.position}</p>
+                    <p class="text-xl mb-6">${testimonial.text}</p>
+                    <div class="flex items-center justify-center">
+                      <img src="${testimonial.image}" alt="${testimonial.name}" class="rounded-full w-14 h-14 mr-4">
+                      <div class="text-left">
+                        <h4 class="font-semibold">${testimonial.name}</h4>
+                        <p class="text-sm opacity-75">${testimonial.position}</p>
                       </div>
                     </div>
                   </div>
@@ -701,9 +468,42 @@
               testimonialsContainer.innerHTML += testimonialHTML;
               
               const indicatorHTML = `
-                <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="${index}" class="${activeClass}" ${index === 0 ? 'aria-current="true"' : ''} aria-label="Testimonial ${index+1}"></button>
+                <button type="button" class="w-3 h-3 rounded-full ${index === 0 ? 'bg-white' : 'bg-white/50'}" data-index="${index}"></button>
               `;
               testimonialIndicators.innerHTML += indicatorHTML;
+            });
+            
+            // Testimonial carousel functionality
+            const testimonialItems = document.querySelectorAll('.testimonial-item');
+            const indicators = document.querySelectorAll('#testimonial-indicators button');
+            const prevButton = document.getElementById('prev-testimonial');
+            const nextButton = document.getElementById('next-testimonial');
+            let currentIndex = 0;
+            
+            function showTestimonial(index) {
+              testimonialItems.forEach(item => item.classList.add('hidden'));
+              indicators.forEach(indicator => indicator.classList.replace('bg-white', 'bg-white/50'));
+              
+              testimonialItems[index].classList.remove('hidden');
+              indicators[index].classList.replace('bg-white/50', 'bg-white');
+              currentIndex = index;
+            }
+            
+            indicators.forEach(indicator => {
+              indicator.addEventListener('click', () => {
+                const index = parseInt(indicator.getAttribute('data-index'));
+                showTestimonial(index);
+              });
+            });
+            
+            prevButton.addEventListener('click', () => {
+              const newIndex = currentIndex === 0 ? testimonialItems.length - 1 : currentIndex - 1;
+              showTestimonial(newIndex);
+            });
+            
+            nextButton.addEventListener('click', () => {
+              const newIndex = currentIndex === testimonialItems.length - 1 ? 0 : currentIndex + 1;
+              showTestimonial(newIndex);
             });
           })
           .catch(error => console.error('Error loading JSON data:', error));
@@ -715,9 +515,10 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', function() {
           if (window.scrollY > 10) {
-            navbar.classList.add('scrolled');
+            navbar.classList.add('bg-white/98', 'shadow-md');
           } else {
-            navbar.classList.remove('scrolled');
+            navbar.classList.remove('bg-white/98', 'shadow-md');
+            navbar.classList.add('bg-white/95');
           }
         });
       
@@ -727,11 +528,11 @@
         
         if (mobileMenuToggle && mobileMenu) {
           mobileMenuToggle.addEventListener('click', function() {
-            mobileMenu.classList.toggle('d-none');
+            mobileMenu.classList.toggle('hidden');
             
             // Update icon
             const icon = mobileMenuToggle.querySelector('svg');
-            if (mobileMenu.classList.contains('d-none')) {
+            if (mobileMenu.classList.contains('hidden')) {
               icon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
             } else {
               icon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
@@ -742,7 +543,7 @@
           const mobileNavLinks = mobileMenu.querySelectorAll('a');
           mobileNavLinks.forEach(link => {
             link.addEventListener('click', function() {
-              mobileMenu.classList.add('d-none');
+              mobileMenu.classList.add('hidden');
               const icon = mobileMenuToggle.querySelector('svg');
               icon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>';
             });
