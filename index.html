@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Webzys - Affordable Static Website Design for Small Business in India</title>
     <meta name="description" content="Professional web design service for startups and small businesses in India. Custom static websites, fast loading, responsive design, all at affordable prices under 5000." />
     <meta name="keywords" content="static website design company, affordable website for small business, custom static websites, professional web design service, website builders for small business, fast loading website design, startup website design India, business website under 5000, responsive static website, SEO-friendly website design" />
@@ -56,6 +56,19 @@
       body {
         font-family: 'Montserrat', sans-serif;
         overflow-x: hidden;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+      }
+      
+      html {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
       }
       
       .gradient-text {
@@ -106,10 +119,51 @@
       .cta-gradient {
         background-image: linear-gradient(to right, #6C63FF, #FF6F61);
       }
+
+      /* Mobile enhancements */
+      .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      @media (min-width: 768px) {
+        .container {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+      }
+      
+      /* Prevent images from overflowing */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Adjust carousel for mobile */
+      #testimonialCarousel {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* Fix mobile menu positioning */
+      #mobile-menu {
+        width: 100%;
+        left: 0;
+        right: 0;
+      }
     </style>
   </head>
 
-  <body class="bg-white text-gray-900">
+  <body class="bg-white text-gray-900 w-full overflow-x-hidden">
     <!-- Hidden header for SEO -->
     <div class="sr-only">
       <h1>Webzys - Professional Static Website Design Company in India</h1>
@@ -144,7 +198,7 @@
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute w-full p-4 hidden animate-fade-in">
+      <div id="mobile-menu" class="md:hidden bg-white shadow-lg fixed w-full p-4 hidden animate-fade-in">
         <nav class="flex flex-col space-y-3">
           <a href="#services" class="text-gray-900 font-medium hover:text-primary transition-colors">Services</a>
           <a href="#why-us" class="text-gray-900 font-medium hover:text-primary transition-colors">Why Us</a>
@@ -156,10 +210,10 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-28 pb-20 relative">
-      <div class="container mx-auto px-4 md:px-6">
+    <section class="pt-28 pb-20 relative w-full overflow-hidden">
+      <div class="container mx-auto">
         <div class="flex flex-col md:flex-row items-center">
-          <div class="md:w-1/2 mb-10 md:mb-0">
+          <div class="md:w-1/2 mb-10 md:mb-0 px-4">
             <h1 class="text-4xl lg:text-5xl font-extrabold mb-6">
               We Build <span class="gradient-text">Beautiful</span> Static Websites
             </h1>
@@ -176,7 +230,7 @@
               </a>
             </div>
           </div>
-          <div class="md:w-1/2 relative">
+          <div class="md:w-1/2 relative px-4">
             <div class="relative rounded-xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
@@ -193,48 +247,48 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center mb-16">
+    <section id="services" class="py-20 w-full overflow-hidden">
+      <div class="container mx-auto">
+        <div class="text-center mb-16 px-4">
           <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Services</h2>
           <p class="text-gray-600 mx-auto max-w-2xl">
             We provide comprehensive web design solutions tailored to your specific needs.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="services-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4" id="services-container">
           <!-- Services will be loaded dynamically from JSON within script -->
         </div>
       </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="py-20 bg-gray-50">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center mb-16">
+    <section id="why-us" class="py-20 bg-gray-50 w-full overflow-hidden">
+      <div class="container mx-auto">
+        <div class="text-center mb-16 px-4">
           <h2 class="text-3xl lg:text-4xl font-bold mb-4">Why Choose Us</h2>
           <p class="text-gray-600 mx-auto max-w-2xl">
             We stand out from the competition with these key advantages
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="reasons-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 px-4" id="reasons-container">
           <!-- Reasons will be loaded dynamically from JSON within script -->
         </div>
       </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center mb-16">
+    <section id="portfolio" class="py-20 w-full overflow-hidden">
+      <div class="container mx-auto">
+        <div class="text-center mb-16 px-4">
           <h2 class="text-3xl lg:text-4xl font-bold mb-4">Our Portfolio</h2>
           <p class="text-gray-600 mx-auto max-w-2xl">
             Check out some of our recent work for our amazing clients
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4" id="portfolio-container">
           <!-- Portfolio items will be loaded dynamically from JSON within script -->
         </div>
         
@@ -247,16 +301,16 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 testimonials-gradient text-white">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center mb-16">
+    <section id="testimonials" class="py-20 testimonials-gradient text-white w-full overflow-hidden">
+      <div class="container mx-auto">
+        <div class="text-center mb-16 px-4">
           <h2 class="text-3xl lg:text-4xl font-bold mb-4">What Our Clients Say</h2>
           <p class="mx-auto max-w-2xl opacity-90">
             Don't just take our word for it. Here's what our clients have to say about our work.
           </p>
         </div>
 
-        <div class="flex justify-center">
+        <div class="flex justify-center px-4">
           <div class="w-full lg:w-2/3">
             <div id="testimonialCarousel" class="relative">
               <div class="carousel-inner" id="testimonials-container">
@@ -267,11 +321,11 @@
                 <!-- Indicators will be loaded dynamically -->
               </div>
               
-              <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 ml-2 focus:outline-none" id="prev-testimonial">
+              <button class="absolute top-1/2 left-1 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 focus:outline-none z-10" id="prev-testimonial">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
               </button>
               
-              <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 mr-2 focus:outline-none" id="next-testimonial">
+              <button class="absolute top-1/2 right-1 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 rounded-full p-2 focus:outline-none z-10" id="next-testimonial">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
               </button>
             </div>
@@ -281,9 +335,9 @@
     </section>
 
     <!-- Call to Action Section -->
-    <section id="contact" class="py-20">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="cta-gradient rounded-2xl overflow-hidden shadow-2xl">
+    <section id="contact" class="py-20 w-full overflow-hidden">
+      <div class="container mx-auto">
+        <div class="cta-gradient rounded-2xl overflow-hidden shadow-2xl mx-4">
           <div class="flex flex-col md:flex-row">
             <div class="md:w-2/3 p-8 md:p-12">
               <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white">Ready to Build Your Dream Website?</h2>
@@ -315,9 +369,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-      <div class="container mx-auto px-4 md:px-6 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-gray-900 text-white py-12 w-full overflow-hidden">
+      <div class="container mx-auto py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
           <div>
             <h3 class="gradient-text text-2xl font-bold mb-6">Webzys</h3>
             <p class="text-gray-400 mb-6">
@@ -377,7 +431,7 @@
           </div>
         </div>
         
-        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500 px-4">
           <p>&copy; <span id="current-year"></span> Webzys. All rights reserved. | Affordable website design for small businesses in India | Business website under 5000</p>
         </div>
       </div>
